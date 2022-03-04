@@ -1,0 +1,53 @@
+{% extends "inherit.html" %}
+
+<title>{% block title %}
+Login
+    {% endblock %}</title>
+
+
+{% block body  %}
+<h1>Login Now</h1><hr> 
+{% from "includes/formhelpers.html" import render_field %}
+<form method="POST"  >
+<ul class="form-control rounded">
+{{ render_field(form2.username) }}
+{{ render_field(form2.password) }}
+</ul>
+
+   
+    <button type="submit" class="btn btn-danger">Submit</button>
+</form>
+
+{% endblock body %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

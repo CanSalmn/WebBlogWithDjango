@@ -1,0 +1,36 @@
+{% extends "inherit.html" %}
+
+
+{% block body %}
+<h1>Articles</h1>
+<hr>
+{% if data %}
+<form action="/search" method = "post">
+<div class="input-group">
+    <input type="text" name = "keyargv" class="form-control rounded" placeholder="Search" aria-label="Search"
+      aria-describedby="search-addon" />
+    <button type="submit" class="btn btn-outline-danger">search</button>
+  </div></form>
+  <hr>
+
+    {% for i in data  %}
+        <ul>
+        <li class ="list-group-item" >Title of Article:<a href="/article/{{i.id}}"> {{i["title"]}}</a></li>
+        <li class ="list-group-item">Author: {{i["author"]}}</li>
+        <li class ="list-group-item" >Created Time: {{i["createdate"]}}</li>
+        <hr>
+        </ul>
+    {% endfor %}
+{% else %}
+    {{result}}
+{% endif %}
+
+
+
+
+
+
+
+
+
+{% endblock body %}

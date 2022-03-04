@@ -1,0 +1,21 @@
+{% extends "inherit.html" %}
+
+{% block body %}
+{% if id <=data.id %}
+<ul>
+    <li class ="list-group-item" >Title of Article: {{data["title"]}}</li>
+    <li class ="list-group-item" >Content: {{data["content"]|safe}}</li>
+    <li class ="list-group-item">Author: {{data["author"]}}</li>   
+    <li class ="list-group-item" >Created Time: {{data["createdate"]}}</li>
+    <hr>
+</ul>
+{% else %}
+<div class ="alert alert-warning">
+    Doesn't Have This Article
+</div>
+{% endif %}
+
+
+
+
+{% endblock body %}

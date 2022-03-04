@@ -1,0 +1,16 @@
+{% extends "inherit.html" %}
+
+
+{% block body %}
+<h1>Create Article</h1>
+{% from "includes/formhelpers.html" import render_field %}
+
+
+<form method="POST" >
+    {{ render_field(uform.title,class="form-control") }}
+    {{ render_field(uform.content,class="form-control") }}
+    <button type="submit" class="btn btn-danger">Update</button>
+</form>
+
+{% endblock body %}
+
